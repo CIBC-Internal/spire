@@ -40,14 +40,14 @@ endif()
 # ++ MODULE: GLM
 CPM_AddModule("GLM"
   GIT_REPOSITORY "https://github.com/CIBC-Internal/cpm-glm"
-  GIT_TAG "1.0.2"
+  GIT_TAG "origin/master"
   USE_EXISTING_VER TRUE
   EXPORT_MODULE TRUE    # Use EXPORT_MODULE sparingly. We expose GLM's interface
   )                     # through our own interface hence why we export it.
 
 CPM_AddModule("gl_platform"
   GIT_REPOSITORY "https://github.com/CIBC-Internal/cpm-gl-platform.git"
-  GIT_TAG "1.3.4"
+  GIT_TAG "origin/master"
   EXPORT_MODULE TRUE
   USE_EXISTING_VER TRUE)
 
