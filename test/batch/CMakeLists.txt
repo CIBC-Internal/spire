@@ -36,7 +36,7 @@ endif ()
 
 
 #------------------------------------------------------------------------------
-# Required CPM Setup - See: http://github.com/iauns/cpm
+# Required CPM Setup - See: http://github.com/CIBC-Internal/cpm
 #------------------------------------------------------------------------------
 set(CPM_DIR "${CMAKE_CURRENT_BINARY_DIR}/cpm-packages" CACHE TYPE STRING)
 find_package(Git)
@@ -44,9 +44,9 @@ if(NOT GIT_FOUND)
   message(FATAL_ERROR "CPM requires Git.")
 endif()
 if (NOT EXISTS ${CPM_DIR}/CPM.cmake)
-  message(STATUS "Cloning repo (https://github.com/iauns/cpm)")
+  message(STATUS "Cloning repo (https://github.com/CIBC-Internal/cpm)")
   execute_process(
-    COMMAND "${GIT_EXECUTABLE}" clone https://github.com/iauns/cpm ${CPM_DIR}
+    COMMAND "${GIT_EXECUTABLE}" clone https://github.com/CIBC-Internal/cpm ${CPM_DIR}
     RESULT_VARIABLE error_code
     OUTPUT_QUIET ERROR_QUIET)
   if(error_code)
@@ -60,17 +60,17 @@ include(${CPM_DIR}/CPM.cmake)
 #    attempt to load the spire module if it does not already exist.
 CPM_AddModule("spire"
   SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../.."
-  SOURCE_GHOST_GIT_REPO "https://github.com/SCIInstitute/spire"
+  SOURCE_GHOST_GIT_REPO "https://github.com/CIBC-Internal/spire"
   SOURCE_GHOST_GIT_TAG "origin/master")
 
 # ++ MODULE: OpenGL Batch Testing
 CPM_AddModule("batch_testing"
-  GIT_REPOSITORY "https://github.com/iauns/cpm-gl-batch-testing"
+  GIT_REPOSITORY "https://github.com/CIBC-Internal/cpm-gl-batch-testing"
   GIT_TAG "1.1.0")
 
 # ++ EXTERNAL-MODULE: Google Test
 CPM_AddModule("google_test"
-  GIT_REPOSITORY "https://github.com/iauns/cpm-google-test"
+  GIT_REPOSITORY "https://github.com/CIBC-Internal/cpm-google-test"
   GIT_TAG "1.0.0"
   USE_EXISTING_VER TRUE)
 
